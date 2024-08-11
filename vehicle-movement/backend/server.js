@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 
-// Mock function to get today's data with a clear start and end place
+
 const getLocationDataForToday = async () => {
   return [
     { latitude: 17.385044, longitude: 78.486671, timestamp: '2024-08-01T08:00:00Z', type: 'start' }, // Start point
@@ -17,7 +17,7 @@ const getLocationDataForToday = async () => {
   ];
 };
 
-// Mock function to get yesterday's data with a clear start and end place
+
 const getLocationDataForYesterday = async () => {
   return [
     { latitude: 17.385044, longitude: 78.486671, timestamp: '2024-07-31T08:00:00Z', type: 'start' }, // Start point
@@ -30,7 +30,7 @@ const getLocationDataForYesterday = async () => {
 };
 
 app.get('/api/vehicle-location', async (req, res) => {
-  const date = req.query.date; // 'today' or 'yesterday'
+  const date = req.query.date; 
   let filteredData;
   try {
     if (!date) {
